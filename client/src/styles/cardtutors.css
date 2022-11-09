@@ -34,7 +34,7 @@
   width: 400px;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 3px;
+  padding: 5px 0px;
 }
 
 .card1 footer h2 {
@@ -53,21 +53,7 @@
 
 .flex1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 80px;
-}
-
-@media screen and (min-width: 40em) {
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .card {
-    flex: 0 1 calc(0.1% - 0.1em);
-  }
 }
