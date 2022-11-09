@@ -1,6 +1,6 @@
 body {
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    background-color: rgb(254, 253, 216);
+    background-color: rgba(0, 255, 225, 0.147);
     overflow-y: hidden;
 }
 

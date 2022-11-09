@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../styles/session.css";
 import { Link } from "react-router-dom";
 import { Form, Formik } from "formik";
@@ -39,20 +39,17 @@ export const Login = (props) => {
               id="password"
               name="password"
               onChange={handleChange} />
-            <Link to="/home">
+            <Link to="/principal">
               <button type="submit">Ingresar</button>
             </Link>
             <Link to="/error">
-              <button type="button"
-                className="link-btn"
+              <button className="link-btn"
               >
                 ¿Olvidaste tu contraseña?
               </button>
             </Link>
             <span color="white">o</span>
-            <button
-              type="button"
-              className="link-btn"
+            <button className="link-btn"
               onClick={() => props.onFormSwitch("register")}
             >
               ¿No tienes una cuenta? Registrate aquí.

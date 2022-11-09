@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "./components/layout"
+import Layout2 from "./components/layour2";
 import { RegisterForm, LoginForm } from "./pages/session";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/app.css";

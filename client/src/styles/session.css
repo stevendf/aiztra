@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-around;
     color: white;
-    padding: 1cm;
+    padding: 2cm;
     font-size: medium;
   }
 
@@ -19,7 +19,7 @@
       padding: 2rem;
       border-radius: 10px;
       margin: 0.5rem;
-      background-image: linear-gradient(75deg, #000000, #000000df 48%, hsl(0, 0%, 0%));
+      background-image: linear-gradient(75deg, azure, #ced4d889 48%, hsla(156, 24%, 78%, 0.588));
       height: 12cm;
       width: 9cm;
       box-shadow: rgb(0, 0, 0) 0px 10px 20px -5px;
@@ -28,8 +28,9 @@
   
   label {
     text-align: left;
-    padding: 0.05rem 0.09;
-    color: #ffff00;
+    padding: 0.08rem 0.09;
+    color: #000000;
+    font-weight: bold;
   }
   
   input {
@@ -38,20 +39,32 @@
     border: none;
     border-radius: 10px;
     font-size: medium;
+    transition: 0.2s ease;
+  }
+
+  input:hover{
+    box-shadow: 0 2px 2px 2px rgba(128, 128, 128, 0.379);
+    transform: scale(1.005);
   }
   
   button {
     border: none;
-    background-color: rgb(255, 251, 0);
-    padding: 1rem;
+    background-color: rgb(0, 0, 0);
+    padding: 0.8rem;
     border-radius: 10px;
     cursor: pointer;
-    color: #0f0425;
+    color: #ffffff;
+    transition: 0.2s ease;
   }
-  
+
+  button:hover {
+    background-color: rgb(48, 177, 184);
+    
+  }
+
   .link-btn {
     background: none;
-    color: rgb(255, 118, 118);
+    color: rgba(255, 0, 0, 0.812);
     text-decoration: underline;
-    font-size: small;
+    font-size: medium;
   }

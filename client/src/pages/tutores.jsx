@@ -1,21 +1,50 @@
 import React, { Component } from "react";
- 
-class Tutors extends Component {
-  render() {
-    return (
-      <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
-      </div>
-    );
-  }
-}
- 
-export default Tutors;
+import { Card1, Flexbox1 } from "../components/cards";
+import "../styles/cardtutors.css";
+import profile from "/assets/profile.png";
+
+export default function Tutor () {
+  return (
+    <>
+      <Flexbox1>
+        <Card1
+          src={profile}
+          title="Tutor 1"
+          disponible="M"
+        />
+
+        <Card1
+          src={profile}
+          title="Tutor 2"
+          disponible="C"
+        />
+
+        <Card1
+          src={profile}
+          title="Tutor 3"
+          disponible="T"
+        />
+      </Flexbox1>
+
+      <Flexbox1>
+        <Card1
+          src={profile}
+          title="Tutor 4"
+          disponible="M"
+        />
+
+        <Card1
+          src={profile}
+          title="Tutor 5"
+          disponible="Q"
+        />
+
+        <Card1
+          src={profile}
+          title="Tutor 6"
+          disponible="F"
+        />
+      </Flexbox1>
+      </>
+  );
+};
