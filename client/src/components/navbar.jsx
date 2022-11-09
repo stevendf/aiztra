@@ -10,11 +10,11 @@ const Navbar = () => {
   return (
     <>
       <nav className='navbar'>
-        <ul className='logo'>
+        <div className='nav-logo'>
           <Link to="/info">
             <img src={logo} alt="logo" height="165px" />
           </Link>
-        </ul>
+        </div>
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
           <Link to='/ingresar' className='ingresar'>
             <li>Ingresar</li>

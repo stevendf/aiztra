@@ -1,109 +1,114 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/session.css";
 import { Link } from "react-router-dom";
+import { Form, Formik } from "formik";
+import { createNewUserRequest } from "../api/user.api";
+import { getUserRequest } from "../api/user.api";
 
 //Login
 
 export const Login = (props) => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-  };
-
   return (
     <div className="auth-form-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Correo</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="ejemplo@correo.com"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">Contraseña</label>
-        <input
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        />
-        <button type="submit">Ingresar</button>
-      </form>
-      <Link to="/error">
-        <button
-          className="link-btn"
-        >
-          ¿Olvidaste tu contraseña?
-        </button>
-      </Link>
-
-      <span color="white">o</span>
-      <button
-        className="link-btn"
-        onClick={() => props.onFormSwitch("register")}
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+        }}
+        onSubmit={async (values) => {
+          console.log(values)
+          try {
+            const response = await getUserRequest(values)
+            console.log(response)
+          } catch (error) {
+            console.error(error)
+          }
+        }}
       >
-        ¿No tienes una cuenta? Registrate aquí.
-      </button>
+        {({ handleChange, handleSubmit }) => (
+          <Form className="login-form" onSubmit={handleSubmit}>
+            <label htmlFor="email">Correo</label>
+            <input type="email"
+              placeholder="ejemplo@correo.com"
+              id="email"
+              name="email"
+              onChange={handleChange} />
+            <label htmlFor="password">Contraseña</label>
+            <input type="password"
+              placeholder="********"
+              id="password"
+              name="password"
+              onChange={handleChange} />
+            <Link to="/home">
+              <button type="submit">Ingresar</button>
+            </Link>
+            <Link to="/error">
+              <button type="button"
+                className="link-btn"
+              >
+                ¿Olvidaste tu contraseña?
+              </button>
+            </Link>
+            <span color="white">o</span>
+            <button
+              type="button"
+              className="link-btn"
+              onClick={() => props.onFormSwitch("register")}
+            >
+              ¿No tienes una cuenta? Registrate aquí.
+            </button>
+          </Form>
+        )}
+
+      </Formik>
     </div>
-  );
-};
+  )
+}
 
 //Registrarse
 
 export const Register = (props) => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [name, setName] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-  };
 
   return (
     <div className="auth-form-container">
-      <form className="register-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombres</label>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          id="name"
-          placeholder="Nombres"
-          name="name"
-        />
-        <label htmlFor="email">Correo</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="ejemplo@correo.com"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">Contraseña</label>
-        <input
-          value={pass}
-          onChange={(e) => setPass(e.target.value)}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        />
-        <button type="submit">Registrarse</button>
-      </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
-        ¿Ya tienes una cuenta? Ingresa aquí.
-      </button>
+      <Formik
+        initialValues={{
+          name: "",
+          email: "",
+          password: "",
+        }}
+        onSubmit={async (values) => {
+          console.log(values)
+          try {
+            const response = await createNewUserRequest(values)
+            console.log(response)
+          } catch (error) {
+            console.error(error)
+          }
+        }}
+      >
+        {({ handleChange, handleSubmit }) => (
+          <Form className="register-form" onSubmit={handleSubmit}>
+            <label htmlFor="name">Nombres</label>
+            <input type="text" name="name" id="name" placeholder="escribe tu nombre"
+              onChange={handleChange} />
+            <label htmlFor="email">Correo</label>
+            <input type="text" name="email" id="email" placeholder="ejemplo@correo.com"
+              onChange={handleChange} />
+            <label htmlFor="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="nueva contraseña"
+              onChange={handleChange} />
+            <button type="submit">registrarse</button>
+            <button type="button" className="link-btn" onClick={() => props.onFormSwitch("login")}>
+              ¿Ya tienes una cuenta? Ingresa aquí.
+            </button>
+          </Form>
+        )}
+
+      </Formik>
     </div>
-  );
-};
+  )
+}
 
 export function LoginForm() {
   const [currentForm, setCurrentForm] = useState("login");

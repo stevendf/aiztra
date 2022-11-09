@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 
@@ -11,14 +12,16 @@ const { mongoose } = require('../database/database');
 app.set('port', process.env.PORT || 3000);
 
 // Middlewares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
 app.use('/api/users',require('./routes/user.routes'));
+app.use('/api/tutors',require('./routes/tutors.routes'));
 
 // Static Files
-app.use(express.static(path.join(__dirname, '/client/public')));;
+app.use(express.static(path.join(__dirname, '/client/public/')));;
 
 // Starting the server
 app.listen(app.get('port'), () => {
