@@ -40,7 +40,7 @@ export const Login = (props) => {
               name="password"
               onChange={handleChange} />
             <Link to="/principal">
-              <button type="submit">Ingresar</button>
+              <button type="submit" className="button">Ingresar</button>
             </Link>
             <Link to="/error">
               <button className="link-btn"
@@ -95,7 +95,7 @@ export const Register = (props) => {
             <label htmlFor="password">Contraseña</label>
             <input type="password" name="password" id="password" placeholder="nueva contraseña"
               onChange={handleChange} />
-            <button type="submit">registrarse</button>
+            <button type="submit" className="button">Registrarse</button>
             <button type="button" className="link-btn" onClick={() => props.onFormSwitch("login")}>
               ¿Ya tienes una cuenta? Ingresa aquí.
             </button>

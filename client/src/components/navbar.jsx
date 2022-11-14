@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <nav className='navbar'>
         <div className='nav-logo'>
-          <Link to="/info">
+          <Link to="/">
             <img src={logo} alt="logo" height="165px" />
           </Link>
         </div>
@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link to='/registrarse' className='registrarse'>
             <li>Unirme</li>
           </Link>
-          <Link to='/info' className='info'>
+          <Link to='/' className='info'>
             <li>Info</li>
           </Link>
         </ul>

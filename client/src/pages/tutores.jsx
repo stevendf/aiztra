@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import { Card1, Flexbox1 } from "../components/cards";
 import "../styles/cardtutors.css";
 import profile from "/assets/profile.png";
 
+
 export default function Tutor () {
   return (
-    <>
+    <> 
       <Flexbox1>
         <Card1
           src={profile}

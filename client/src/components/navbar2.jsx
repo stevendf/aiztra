@@ -11,19 +11,16 @@ const Navbar2 = () => {
     <>
       <nav className='navbar'>
         <div className='nav-logo'>
-          <Link to="/info">
+          <Link to="/">
             <img src={logo} alt="logo" height="165px" />
           </Link>
         </div>
         <ul className={Mobile ? "nav-links-mobile" : "nav-links"} onClick={() => setMobile(false)}>
-          <Link to='/tutores' className='ingresar'>
-            <li>Tutores</li>
+          <Link to='/principal' className='home'>
+            <li>Principal</li>
           </Link>
-          <Link to='/libros' className='registrarse'>
-            <li>Libros</li>
-          </Link>
-          <Link to='/info' className='info'>
-            <li>Info</li>
+          <Link to='/salir' className='salir'>
+            <li>Salir</li>
           </Link>
         </ul>
         <button className='mobile-menu-icon' onClick={() => setMobile(!Mobile)}>
