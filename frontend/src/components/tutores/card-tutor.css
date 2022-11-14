@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tutor_card {
+  background: #fff;
+  width: fit-content;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tutor_card:hover {
+  box-shadow: 0 10px 20px 1px gray;
+  transform: scale(1.03);
+}
+
+.tutor_card img {
+  width: 150px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.tutor_card footer {
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+
+.tutor_card footer h2 {
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.tutor_card footer p {
+  background: #b2ebf2;
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+.tutor_grid {
+  display: grid;
+  padding: 5%;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  justify-content: space-around;
+  gap: 0.5em;
+}

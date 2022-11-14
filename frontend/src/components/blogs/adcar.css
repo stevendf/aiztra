@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.adcard {
+  background: #fff;
+  width: fit-content;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.adcard:hover {
+  box-shadow: 0 10px 20px 1px gray;
+  transform: scale(1.03);
+}
+
+.adcard img {
+  width: 10px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.adcard footer {
+  display: flex;
+  width: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+
+.adcard footer h2 {
+  font-weight: 40;
+  margin-left: 10px;
+}
+
+.adcard footer p {
+  background: #b2ebf2;
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+.adgrid {
+  display: grid;
+  padding: 5%;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  justify-content: space-around;
+  gap: 0.5em;
+}
